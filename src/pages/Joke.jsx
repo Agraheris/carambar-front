@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import JokeCard from '../components/JokeCard';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+
 function Joke() {
   const { id } = useParams();
   const [joke, setJoke] = useState(null);
@@ -10,7 +12,7 @@ function Joke() {
   useEffect(() => {
     const fetchJoke = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/jokes/${id}`);
+        const response = await fetch(`${API_URL}/jokes/${id}`);
         const data = await response.json();
         setJoke(data);
       } catch (error) {

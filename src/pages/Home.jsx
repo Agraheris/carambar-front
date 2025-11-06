@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import JokeCard from '../components/JokeCard';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+
 function Home() {
   const [joke, setJoke] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -8,7 +10,7 @@ function Home() {
   const fetchRandomJoke = async () => {
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:3000/jokes/random');
+      const response = await fetch(`${API_URL}/jokes/random`);
       const data = await response.json();
       setJoke(data);
     } catch (error) {

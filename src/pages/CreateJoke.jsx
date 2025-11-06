@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+
 function CreateJoke() {
   const [question, setQuestion] = useState('');
   const [answer, setAnswer] = useState('');
@@ -19,7 +21,7 @@ function CreateJoke() {
 
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:3000/jokes', {
+      const response = await fetch(`${API_URL}/jokes`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
