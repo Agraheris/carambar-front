@@ -1,16 +1,126 @@
-# React + Vite
+# 🍬 Carambar - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Application web React pour consulter et gérer des blagues Carambar avec un design ludique et interactif.
 
-Currently, two official plugins are available:
+## 📋 Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Interface utilisateur moderne qui permet de :
+- Afficher une blague aléatoire avec effet de rotation (comme un vrai papier Carambar)
+- Consulter la liste complète des blagues
+- Voir le détail d'une blague
+- Créer de nouvelles blagues
 
-## React Compiler
+## 🛠️ Stack technique
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework** : React 18
+- **Build tool** : Vite
+- **Routing** : React Router DOM v6
+- **Styling** : CSS custom (thème Carambar)
+- **HTTP Client** : Fetch API
 
-## Expanding the ESLint configuration
+## 🎨 Fonctionnalités
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Page d'accueil
+- Bouton pour afficher une blague aléatoire
+- Carte interactive avec effet rotation 180° (rappel du papier Carambar)
+- Design aux couleurs Carambar (jaune/orange/rouge)
+
+### Liste des blagues
+- Affichage en grille responsive (1 à 4 colonnes selon la taille d'écran)
+- Cartes cliquables menant au détail
+
+### Détail d'une blague
+- Affichage question/réponse
+- Effet rotation identique à la page d'accueil
+- Bouton retour vers la liste
+
+### Création de blague
+- Formulaire avec validation
+- Ajout en temps réel à la base de données
+
+## 🚀 Installation et lancement
+
+### Prérequis
+- Node.js 20+ installé
+- npm ou yarn
+- API backend lancée (voir carambar-api)
+
+### Installation
+```bash
+# Cloner le repo
+git clone https://github.com/Agraheris/carambar-front.git
+cd carambar-front
+
+# Installer les dépendances
+npm install
+```
+
+### Configuration
+Créer un fichier `.env` à la racine :
+```env
+VITE_API_URL=http://localhost:3000
+```
+
+### Lancement
+```bash
+# Mode développement
+npm run dev
+
+# Build production
+npm run build
+
+# Preview du build
+npm run preview
+```
+
+Le site démarre sur **http://localhost:5173**
+
+## 📁 Structure du projet
+```
+carambar-front/
+├── src/
+│   ├── components/
+│   │   ├── Navbar.jsx
+│   │   ├── Navbar.css
+│   │   ├── JokeCard.jsx
+│   │   └── JokeCard.css
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   ├── JokesList.jsx
+│   │   ├── JokeDetail.jsx
+│   │   └── CreateJoke.jsx
+│   ├── App.jsx
+│   ├── App.css
+│   └── main.jsx
+├── public/
+└── package.json
+```
+
+## 📱 Responsive Design
+
+L'application s'adapte à toutes les tailles d'écran :
+- **Mobile** (< 768px) : 1 colonne
+- **Tablette** (768px - 1023px) : 2 colonnes
+- **Desktop** (1024px - 1439px) : 3 colonnes
+- **Grand écran** (≥ 1440px) : 4 colonnes
+
+## 🎨 Design
+
+Thème inspiré des emballages Carambar :
+- **Couleurs** : Jaune (#FFD700), Orange (#FFA500), Rouge (#E63946)
+- **Effet** : Rotation 180° des cartes (comme retourner un papier Carambar)
+- **Typographie** : Police Arial pour la lisibilité
+
+## 🌐 Déploiement
+
+**Site déployé sur** : [GitHub Pages - À venir]
+
+**API backend** : [Render.com - À venir]
+
+## 👨‍💻 Auteur
+
+**Clément** - Projet de sélection CDA Wild Code School 2025
+
+## 📝 Licence
+
+Projet éducatif - Wild Code School
