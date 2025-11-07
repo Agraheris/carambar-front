@@ -8,7 +8,7 @@ import './App.css';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/carambar-front">
       <div className="app">
         <Navbar />
         <Routes>
